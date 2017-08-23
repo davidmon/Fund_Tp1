@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{title}}</title>
+    {% else %}
+    <title>
+        Fundamentos
+    </title>
+    {% endif %}
+    <link rel=stylesheet type=text/css href="{{url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="icon" href="{{url_for('static', filename='../static/imagen/icono5.ico')}}" type="image/x-icon"/>
+</head>
+<body>
+    <header style="padding-right: 15px;">
+        Fundamentos Teoricos de la Informatica
+    </header>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <br>
+    <br>
+    <footer>
+        <p>Alumnos: Veronica Paz, David Monjelat </p>
+    </footer>
+</body>
+</html>

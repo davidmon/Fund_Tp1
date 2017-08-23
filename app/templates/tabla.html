@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="row">
+     <div class="col-xs-12 col-sm-12 col-md-12" style="padding-top: 20px;">
+         <t3 style="padding-left: 20px;">Resultado</t3>    
+         <br>
+     </div>
+</div>
+<br>
+<div class="row">
+   <div class="col-xs-2 col-sm-2 col-md-2">
+   </div>
+   <div class="col-xs-8 col-sm-8 col-md-8">
+      <table>
+         <tr>
+            <th style="text-align: center;">X</th>
+           <th style="text-align: center;">Y</th>
+           <th style="text-align: center;">z</th>
+           <th style="text-align: center;">Nro de puntos</th>
+         </tr>
+         {% for coord in lista_coordenadas %}
+         <tr>
+         {% for c in coord %}
+            <td style="text-align: center;">{{c}}</td>
+         {% endfor %}
+         </tr>
+         {% endfor %}
+      </table>
+   </div>
+   <div class="col-xs-2 col-sm-2 col-md-2">
+   </div>
+
+
+
+{% endblock %}
