@@ -22,6 +22,3 @@ def index():
 		return render_template("tabla.html",title='TP3 Resutado', lista_coordenadas= lista_coordenadas)
 
 	return render_template('index.html', title='TP3', form=archivoForm)
-
-if __name__ == '__main__':
-	app.run (debug = true, host="0.0.0.0")
