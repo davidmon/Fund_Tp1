@@ -5,15 +5,12 @@ import os.path as path
 import re
 
 def mivalidacion(form, field):
-	print field.data
 	if not path.exists(field.data) and len(field.data)>0:
-		pass
-		#raise validators.ValidationError('* El archivo no existe. Ingrese un archivo valido!')
+		raise validators.ValidationError('* El archivo no existe. Ingrese un archivo valido!')
 	valor = re.compile(r'\w+\.html')
 	nombreDelArchivo = valor.findall(field.data)
 	if len(nombreDelArchivo)==0:
-		pass
-		#raise validators.ValidationError('* El archivo no es un html. Ingrese un archivo valido!')
+		raise validators.ValidationError('* El archivo no es un html. Ingrese un archivo valido!')
 
 class ArchivoForm(Form):
 	nombreArchivo = StringField('- Ingresar el Nombre del Archivo:', [

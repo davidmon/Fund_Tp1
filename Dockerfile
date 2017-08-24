@@ -6,8 +6,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /usr/src/app
 COPY requirements.txt ./
-EXPOSE 5000
 RUN pip install -r requirements.txt
 RUN git clone https://github.com/davidmon/Fund_Tp1.git
-
+EXPOSE 5000	
 CMD ["python", "Fund_Tp1/run.py"]
