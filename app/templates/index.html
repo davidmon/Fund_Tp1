@@ -25,7 +25,9 @@
 				{% from "_macro.html" import render_field %}
 				<hr>
 				<form method="POST">
+					<dl>
 					{{ render_field(form.nombreArchivo, class='form-control btn-sm', placeholder="Ingresar el nombre del archivo") }}
+					</dl>
 					<div align="right" style="padding-top: 20px">
 						<button class="btn btn-ghost btn-sm" type="submit" title="Generar archivo txt">
 							Generar Txt
