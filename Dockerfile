@@ -8,6 +8,7 @@ RUN apt-get update \
 WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
-RUN git clone https://github.com/davidmon/Fund_Tp1.git
 EXPOSE 5000
+RUN git clone https://github.com/davidmon/Fund_Tp1.git
+
 CMD ["python", "Fund_Tp1/run.py"]

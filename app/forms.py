@@ -16,7 +16,7 @@ def mivalidacion(form, field):
 class ArchivoForm(Form):
 	nombreArchivo = StringField('- Ingresar el Nombre del Archivo:', [
 		validators.length(min=5, max=50, message='* Nombre no valido. Ingrese una nombre valido!'),
-		validators.Required(message='* Este es un campo requerido'),
-		mivalidacion
+		validators.Required(message='* Este es un campo requerido')
+		
 		]
 		)
